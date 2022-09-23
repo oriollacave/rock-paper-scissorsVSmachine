@@ -1,14 +1,11 @@
 let ma = 0
 let maquina = 0
 input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
-    ma = 0
+    if (ma == 3) {
+        ma = 1
+    } else {
+        ma += 1
+    }
 })
 input.onButtonPressed(Button.B, function () {
     maquina = randint(1, 3)
@@ -67,6 +64,43 @@ input.onButtonPressed(Button.B, function () {
         }
     }
 })
+input.onGesture(Gesture.Shake, function () {
+    maquina = 0
+    ma = 0
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+})
 basic.forever(function () {
-	
+    if (ma == 2) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    }
+    if (ma == 3) {
+        basic.showLeds(`
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
+            `)
+    }
+    if (ma == 1) {
+        basic.showLeds(`
+            # . # . #
+            # . # . #
+            # . # . #
+            # # # # #
+            # # # # #
+            `)
+    }
 })
