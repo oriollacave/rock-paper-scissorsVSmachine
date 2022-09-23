@@ -67,36 +67,6 @@ input.onButtonPressed(Button.B, function () {
         }
     }
 })
-input.onGesture(Gesture.Shake, function () {
-    ma = randint(1, 3)
-    if (ma == 1) {
-        basic.showLeds(`
-            # . # . #
-            # . # . #
-            # . # . #
-            # # # # #
-            # # # # #
-            `)
-    }
-    if (ma == 2) {
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
-    }
-    if (ma == 3) {
-        basic.showLeds(`
-            # # . . #
-            # # . # .
-            . . # . .
-            # # . # .
-            # # . . #
-            `)
-    }
-})
 basic.forever(function () {
 	
 })
